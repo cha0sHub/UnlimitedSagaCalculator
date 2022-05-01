@@ -11,3 +11,6 @@ This program has the following features:
  Comes with English and Japanese localization.
 
 Repository contains both source code and an executable in the "exe" folder.
+
+## Known Issues
+  - May have issues running on Windows 7 (being looked into)
