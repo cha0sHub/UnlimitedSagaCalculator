@@ -9,3 +9,5 @@ This program has the following features:
  The program is pre-loaded with all character, enemy, and attack data needed to do all the calculations, so external sources are not needed for finding values.
  
  Comes with English and Japanese localization.
+
+Repository contains both source code and an executable in the "exe" folder.
