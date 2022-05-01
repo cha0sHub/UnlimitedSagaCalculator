@@ -634,25 +634,38 @@ namespace UnlimitedSagaCalculator.Controllers
 
         public void CalculateWeight()
         {
-            var characterData = new CharacterData
-            {
-                Weight = SelectedCharacter.Weight,
-                WeaponOneMaterial = SelectedWeaponOneMaterial.EnglishName,
-                WeaponOneType = SelectedWeaponOneType.EnglishName,
-                WeaponTwoMaterial = SelectedWeaponTwoMaterial.EnglishName,
-                WeaponTwoType = SelectedWeaponTwoType.EnglishName,
-                AccessoryOneMaterial = SelectedAccessoryOneMaterial.EnglishName,
-                AccessoryOneType = SelectedAccessoryOneType.EnglishName,
-                AccessoryTwoMaterial = SelectedAccessoryTwoMaterial.EnglishName,
-                AccessoryTwoType = SelectedAccessoryTwoType.EnglishName,
-                HeadMaterial = SelectedHeadMaterial.EnglishName,
-                HeadType = SelectedHeadType.EnglishName,
-                ChestMaterial = SelectedChestMaterial.EnglishName,
-                ChestType = SelectedChestType.EnglishName,
-                LegsMaterial = SelectedLegMaterial.EnglishName,
-                LegsType = SelectedLegType.EnglishName
-            };
+            var characterData = new CharacterData();
 
+            characterData.Weight = SelectedCharacter.Weight;
+            if(SelectedWeaponOneMaterial != null)
+                characterData.WeaponOneMaterial = SelectedWeaponOneMaterial.EnglishName;
+            if(SelectedWeaponOneType != null)
+                characterData.WeaponOneType = SelectedWeaponOneType.EnglishName;
+            if(SelectedWeaponTwoMaterial != null)
+                characterData.WeaponTwoMaterial = SelectedWeaponTwoMaterial.EnglishName;
+            if(SelectedWeaponTwoType != null)
+                characterData.WeaponTwoType = SelectedWeaponTwoType.EnglishName;
+            if(SelectedAccessoryOneMaterial != null)
+                characterData.AccessoryOneMaterial = SelectedAccessoryOneMaterial.EnglishName;
+            if(SelectedAccessoryOneType != null)
+                characterData.AccessoryOneType = SelectedAccessoryOneType.EnglishName;
+            if(SelectedAccessoryTwoMaterial != null)
+                characterData.AccessoryTwoMaterial = SelectedAccessoryTwoMaterial.EnglishName;
+            if(SelectedAccessoryTwoType != null)
+                characterData.AccessoryTwoType = SelectedAccessoryTwoType.EnglishName;
+            if(SelectedHeadMaterial != null)
+                characterData.HeadMaterial = SelectedHeadMaterial.EnglishName;
+            if(SelectedHeadType != null)
+                characterData.HeadType = SelectedHeadType.EnglishName;
+            if(SelectedChestMaterial != null)
+                characterData.ChestMaterial = SelectedChestMaterial.EnglishName;
+            if(SelectedChestType != null)
+                characterData.ChestType = SelectedChestType.EnglishName;
+            if(SelectedLegMaterial != null)
+                characterData.LegsMaterial = SelectedLegMaterial.EnglishName;
+            if(SelectedLegType != null)
+                characterData.LegsType = SelectedLegType.EnglishName;
+            
             var weightResult = WeightCalculator.CalculateWeight(characterData);
 
             FinalCharacterWeight = weightResult.CharacterWeight.ToString("0.00");
