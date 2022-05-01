@@ -159,6 +159,8 @@ namespace UnlimitedSagaCalculator.Controllers
 
         public void Calculate()
         {
+            if (SelectedMaterial == null || SelectedEquipmentType == null)
+                return;
             var itemData = new ItemData
             {
                 Material = SelectedMaterial.EnglishName,
