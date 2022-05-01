@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SlashDefenseLabel" xml:space="preserve">
+    <value>金 - 防御力:</value>
+  </data>
+  <data name="HitDefenseLabel" xml:space="preserve">
+    <value>打 - 防御力:</value>
+  </data>
+  <data name="PierceDefenseLabel" xml:space="preserve">
+    <value>突 - 防御力:</value>
+  </data>
+  <data name="HeatDefenseLabel" xml:space="preserve">
+    <value>熱 - 防御力:</value>
+  </data>
+  <data name="ColdDefenseLabel" xml:space="preserve">
+    <value>冷 - 防御力:</value>
+  </data>
+  <data name="LightningDefenseLabel" xml:space="preserve">
+    <value>電 - 防御力:</value>
+  </data>
+  <data name="LightDefenseLabel" xml:space="preserve">
+    <value>光 - 防御力:</value>
+  </data>
+  <data name="LpDefenseLabel" xml:space="preserve">
+    <value>LP - 防御力:</value>
+  </data>
+  <data name="AttributesLabel" xml:space="preserve">
+    <value>属性:</value>
+  </data>
+  <data name="EnCostLabel" xml:space="preserve">
+    <value>ENコスト:</value>
+  </data>
+  <data name="GrowthRateLabel" xml:space="preserve">
+    <value>成長度:</value>
+  </data>
+  <data name="LpDamageLabel" xml:space="preserve">
+    <value>LPダメージ:</value>
+  </data>
+  <data name="HpDamageLabel" xml:space="preserve">
+    <value>HPダメージ:</value>
+  </data>
+  <data name="NumberOfHitsLabel" xml:space="preserve">
+    <value>命中回数:</value>
+  </data>
+  <data name="AttackLabel" xml:space="preserve">
+    <value>技</value>
+  </data>
+  <data name="AttackColonLabel" xml:space="preserve">
+    <value>技:</value>
+  </data>
+  <data name="EnemyColonLabel" xml:space="preserve">
+    <value>モンスター:</value>
+  </data>
+  <data name="EnemyLabel" xml:space="preserve">
+    <value>モンスター</value>
+  </data>
+  <data name="StrengthLabel" xml:space="preserve">
+    <value>力:</value>
+  </data>
+  <data name="SkillLabel" xml:space="preserve">
+    <value>技:</value>
+  </data>
+  <data name="WeightLabel" xml:space="preserve">
+    <value>重量:</value>
+  </data>
+  <data name="WeaponPowerLabel" xml:space="preserve">
+    <value>武器の攻撃性能:</value>
+  </data>
+  <data name="ComboPercentageLabel" xml:space="preserve">
+    <value>連携倍率 (1.00 = 100%):</value>
+  </data>
+  <data name="Martial" xml:space="preserve">
+    <value>体術技</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>技</value>
+  </data>
+  <data name="Strength" xml:space="preserve">
+    <value>力</value>
+  </data>
+  <data name="Axe" xml:space="preserve">
+    <value>斧</value>
+  </data>
+  <data name="Sword" xml:space="preserve">
+    <value>長剣</value>
+  </data>
+  <data name="Dagger" xml:space="preserve">
+    <value>短剣</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>杖</value>
+  </data>
+  <data name="Spear" xml:space="preserve">
+    <value>槍</value>
+  </data>
+  <data name="Bow" xml:space="preserve">
+    <value>弓</value>
+  </data>
+  <data name="Gun" xml:space="preserve">
+    <value>銃</value>
+  </data>
+  <data name="Hit" xml:space="preserve">
+    <value>打</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>光</value>
+  </data>
+  <data name="Punch" xml:space="preserve">
+    <value>パンチ</value>
+  </data>
+  <data name="Kick" xml:space="preserve">
+    <value>キック</value>
+  </data>
+  <data name="Throw" xml:space="preserve">
+    <value>投げ</value>
+  </data>
+  <data name="Slash" xml:space="preserve">
+    <value>金</value>
+  </data>
+  <data name="Pierce" xml:space="preserve">
+    <value>突</value>
+  </data>
+  <data name="Lightning" xml:space="preserve">
+    <value>電</value>
+  </data>
+  <data name="WeaponOneLabel" xml:space="preserve">
+    <value>武器 1:</value>
+  </data>
+  <data name="WeaponTwoLabel" xml:space="preserve">
+    <value>武器 2:</value>
+  </data>
+  <data name="WeaponOneWeightLabel" xml:space="preserve">
+    <value>武器の重量 1:</value>
+  </data>
+  <data name="WeaponTwoWeightLabel" xml:space="preserve">
+    <value>武器の重量 2:</value>
+  </data>
+  <data name="AccessoryOneLabel" xml:space="preserve">
+    <value>装飾品 1:</value>
+  </data>
+  <data name="AccessoryTwoLabel" xml:space="preserve">
+    <value>装飾品 2:</value>
+  </data>
+  <data name="AccessoryOneWeightLabel" xml:space="preserve">
+    <value>装飾品の重量 1:</value>
+  </data>
+  <data name="AccessoryTwoWeightLabel" xml:space="preserve">
+    <value>装飾品の重量 2:</value>
+  </data>
+  <data name="AllLabel" xml:space="preserve">
+    <value>全</value>
+  </data>
+  <data name="AttackDamageLabel" xml:space="preserve">
+    <value>攻撃のダメージ:</value>
+  </data>
+  <data name="AttackerLabel" xml:space="preserve">
+    <value>アタッカー</value>
+  </data>
+  <data name="CalculateLabel" xml:space="preserve">
+    <value>計算する</value>
+  </data>
+  <data name="CharacterColonLabel" xml:space="preserve">
+    <value>キャラ:</value>
+  </data>
+  <data name="CharacterLabel" xml:space="preserve">
+    <value>キャラ</value>
+  </data>
+  <data name="BonusLabel" xml:space="preserve">
+    <value>ボーナス</value>
+  </data>
+  <data name="CharacterWeightLabel" xml:space="preserve">
+    <value>キャラデータの体重:</value>
+  </data>
+  <data name="ChestLabel" xml:space="preserve">
+    <value>体防具:</value>
+  </data>
+  <data name="ChestWeightLabel" xml:space="preserve">
+    <value>体防具の重量:</value>
+  </data>
+  <data name="ComboDamageLabel" xml:space="preserve">
+    <value>コンボダメージ:</value>
+  </data>
+  <data name="DamageCalculatorLabel" xml:space="preserve">
+    <value>ダメージ計算機</value>
+  </data>
+  <data name="CurrentHpLabel" xml:space="preserve">
+    <value>現在のHP:</value>
+  </data>
+  <data name="DamageProbabilityLabel" xml:space="preserve">
+    <value>確率:</value>
+  </data>
+  <data name="DurabilityLabel" xml:space="preserve">
+    <value>耐久力:</value>
+  </data>
+  <data name="EarthLabel" xml:space="preserve">
+    <value>土:</value>
+  </data>
+  <data name="EnduranceLabel" xml:space="preserve">
+    <value>体:</value>
+  </data>
+  <data name="FinalCostLabel" xml:space="preserve">
+    <value>最終価格:</value>
+  </data>
+  <data name="FinalDamageLabel" xml:space="preserve">
+    <value>最終ダメージ:</value>
+  </data>
+  <data name="FinalLabel" xml:space="preserve">
+    <value>最後</value>
+  </data>
+  <data name="FireLabel" xml:space="preserve">
+    <value>火:</value>
+  </data>
+  <data name="HeadLabel" xml:space="preserve">
+    <value>頭防具:</value>
+  </data>
+  <data name="HeadWeightLabel" xml:space="preserve">
+    <value>頭防具の重量:</value>
+  </data>
+  <data name="HpDamageCalculation" xml:space="preserve">
+    <value>HPダメージ計算</value>
+  </data>
+  <data name="WoodLabel" xml:space="preserve">
+    <value>木:</value>
+  </data>
+  <data name="WeightNoColonLabel" xml:space="preserve">
+    <value>重量</value>
+  </data>
+  <data name="WeightCalculatorLabel" xml:space="preserve">
+    <value>体重計算機</value>
+  </data>
+  <data name="WaterLabel" xml:space="preserve">
+    <value>水:</value>
+  </data>
+  <data name="TotalWeightLabel" xml:space="preserve">
+    <value>総重量:</value>
+  </data>
+  <data name="ThreeDamageLabel" xml:space="preserve">
+    <value>3 LPダメージ確率:</value>
+  </data>
+  <data name="TwoDamageLabel" xml:space="preserve">
+    <value>2 LPダメージ確率:</value>
+  </data>
+  <data name="OneDamageLabel" xml:space="preserve">
+    <value>1 LPダメージ確率:</value>
+  </data>
+  <data name="ZeroDamageLabel" xml:space="preserve">
+    <value>0 LPダメージ確率:</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>タイプ</value>
+  </data>
+  <data name="TypeWithColonLabel" xml:space="preserve">
+    <value>タイプ:</value>
+  </data>
+  <data name="TransferLabel" xml:space="preserve">
+    <value>転送する</value>
+  </data>
+  <data name="LegLabel" xml:space="preserve">
+    <value>足防具:</value>
+  </data>
+  <data name="LegWeightLabel" xml:space="preserve">
+    <value>足防具の重量:</value>
+  </data>
+  <data name="MagicLabel" xml:space="preserve">
+    <value>魔:</value>
+  </data>
+  <data name="MagicTypeLabel" xml:space="preserve">
+    <value>術タイプ:</value>
+  </data>
+  <data name="MaterialLabel" xml:space="preserve">
+    <value>素材</value>
+  </data>
+  <data name="MaterialWithColonLabel" xml:space="preserve">
+    <value>素材:</value>
+  </data>
+  <data name="MaxHpLabel" xml:space="preserve">
+    <value>最大のHP:</value>
+  </data>
+  <data name="MetalLabel" xml:space="preserve">
+    <value>金:</value>
+  </data>
+  <data name="MultiplierLabel" xml:space="preserve">
+    <value>乗数</value>
+  </data>
+  <data name="NumberOfAbilitiesLabel" xml:space="preserve">
+    <value>アビリティ カウント:</value>
+  </data>
+  <data name="WeaponTypeLabel" xml:space="preserve">
+    <value>武器のタイプ:</value>
+  </data>
+  <data name="StartingPanelsLabel" xml:space="preserve">
+    <value>開始パネル</value>
+  </data>
+  <data name="SpiritLabel" xml:space="preserve">
+    <value>心:</value>
+  </data>
+  <data name="Shield" xml:space="preserve">
+    <value>盾</value>
+  </data>
+  <data name="SetDamageLabel" xml:space="preserve">
+    <value>セットダメージ</value>
+  </data>
+  <data name="SellingPriceLabel" xml:space="preserve">
+    <value>販売価格:</value>
+  </data>
+  <data name="ResultsLabel" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="RawLabel" xml:space="preserve">
+    <value>ベース</value>
+  </data>
+  <data name="RawDamageLabel" xml:space="preserve">
+    <value>ベースダメージ:</value>
+  </data>
+  <data name="PanelBoardLabel" xml:space="preserve">
+    <value>パネル構成</value>
+  </data>
+  <data name="LpDamageCalculation" xml:space="preserve">
+    <value>LPダメージ計算</value>
+  </data>
+  <data name="ItemCostCalculatorLabel" xml:space="preserve">
+    <value>アイテムコスト計算機</value>
+  </data>
+  <data name="ItemLabel" xml:space="preserve">
+    <value>アイテム</value>
+  </data>
+  <data name="CharacterStatCalculatorLabel" xml:space="preserve">
+    <value>キャラデータ計算機</value>
+  </data>
+  <data name="BaseValueLabel" xml:space="preserve">
+    <value>ベース値:</value>
+  </data>
+  <data name="EquipmentModifierLabel" xml:space="preserve">
+    <value>装置 モディファイア:</value>
+  </data>
+  <data name="InitialEquipmentLabel" xml:space="preserve">
+    <value>初期設備</value>
+  </data>
+  <data name="AttackTypeLabel" xml:space="preserve">
+    <value>技タイプ:</value>
+  </data>
+  <data name="AddToComboLabel" xml:space="preserve">
+    <value>コンボダメージに追加</value>
+  </data>
+  <data name="AbilityModifierLabel" xml:space="preserve">
+    <value>アビリティ モディファイア:</value>
+  </data>
+  <data name="Magic" xml:space="preserve">
+    <value>術</value>
+  </data>
+  <data name="Beast" xml:space="preserve">
+    <value>獣</value>
+  </data>
+  <data name="Wildling" xml:space="preserve">
+    <value>獣人</value>
+  </data>
+  <data name="Bird" xml:space="preserve">
+    <value>鳥</value>
+  </data>
+  <data name="Insect" xml:space="preserve">
+    <value>昆虫</value>
+  </data>
+  <data name="Vegeplast" xml:space="preserve">
+    <value>植物</value>
+  </data>
+  <data name="Aquan" xml:space="preserve">
+    <value>水棲生物</value>
+  </data>
+  <data name="Demon" xml:space="preserve">
+    <value>魔族</value>
+  </data>
+  <data name="Undead" xml:space="preserve">
+    <value>アンデッド</value>
+  </data>
+  <data name="Slime" xml:space="preserve">
+    <value>スライム</value>
+  </data>
+  <data name="Dragon" xml:space="preserve">
+    <value>ドラゴン</value>
+  </data>
+  <data name="Unique" xml:space="preserve">
+    <value>系統不詳</value>
+  </data>
+  <data name="Gauntlet" xml:space="preserve">
+    <value>ガントレット</value>
+  </data>
+  <data name="Kotr" xml:space="preserve">
+    <value>ナ・オ・ザ・ラ</value>
+  </data>
+  <data name="ScenarioBoss" xml:space="preserve">
+    <value>ラストボス</value>
+  </data>
+  <data name="Boss" xml:space="preserve">
+    <value>ボス</value>
+  </data>
+  <data name="Defense" xml:space="preserve">
+    <value>防御</value>
+  </data>
+  <data name="Mastery" xml:space="preserve">
+    <value>マスタリー</value>
+  </data>
+  <data name="Familiar" xml:space="preserve">
+    <value>ファミリア</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>達人</value>
+  </data>
+  <data name="Phobia" xml:space="preserve">
+    <value>恐怖症</value>
+  </data>
+  <data name="Pacifist" xml:space="preserve">
+    <value>不殺の誓約</value>
+  </data>
+  <data name="Seal" xml:space="preserve">
+    <value>封印</value>
+  </data>
+  <data name="Investigation" xml:space="preserve">
+    <value>探索</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>補助</value>
+  </data>
+  <data name="Negotiation" xml:space="preserve">
+    <value>交渉</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>アイテム</value>
+  </data>
+  <data name="Mystery" xml:space="preserve">
+    <value>神秘</value>
+  </data>
+  <data name="Wood" xml:space="preserve">
+    <value>木</value>
+  </data>
+  <data name="Water" xml:space="preserve">
+    <value>水</value>
+  </data>
+  <data name="Metal" xml:space="preserve">
+    <value>金</value>
+  </data>
+  <data name="Fire" xml:space="preserve">
+    <value>火</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>土</value>
+  </data>
+  <data name="WeaponMaterialLabel" xml:space="preserve">
+    <value>武器の素材:</value>
+  </data>
+</root>

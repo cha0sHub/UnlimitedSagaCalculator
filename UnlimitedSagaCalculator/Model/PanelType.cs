@@ -1,0 +1,30 @@
+﻿namespace UnlimitedSagaCalculator.Model
+{
+    public enum PanelType
+    {
+        None,
+        Martial,
+        Dagger,
+        Sword,
+        Axe,
+        Staff,
+        Spear,
+        Bow,
+        Gun,
+        Shield,
+        Defense,
+        Magic,
+        Familiar,
+        Expert,
+        Mastery,
+        Investigation,
+        Support,
+        Negotiation,
+        Item,
+        Mystery,
+        Gauntlet,
+        Phobia,
+        Pacifist,
+        Seal
+    }
+}

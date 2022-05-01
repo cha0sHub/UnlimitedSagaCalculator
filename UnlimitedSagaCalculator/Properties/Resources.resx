@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AttackerLabel" xml:space="preserve">
+    <value>Attacker</value>
+  </data>
+  <data name="CurrentHpLabel" xml:space="preserve">
+    <value>Current HP:</value>
+  </data>
+  <data name="MaxHpLabel" xml:space="preserve">
+    <value>Max HP:</value>
+  </data>
+  <data name="StrengthLabel" xml:space="preserve">
+    <value>Strength:</value>
+  </data>
+  <data name="SkillLabel" xml:space="preserve">
+    <value>Skill:</value>
+  </data>
+  <data name="WeightLabel" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="WeaponPowerLabel" xml:space="preserve">
+    <value>Weapon Power:</value>
+  </data>
+  <data name="EnemyLabel" xml:space="preserve">
+    <value>Enemy</value>
+  </data>
+  <data name="SlashDefenseLabel" xml:space="preserve">
+    <value>Slash Defense:</value>
+  </data>
+  <data name="HitDefenseLabel" xml:space="preserve">
+    <value>Hit Defense:</value>
+  </data>
+  <data name="PierceDefenseLabel" xml:space="preserve">
+    <value>Pierce Defense:</value>
+  </data>
+  <data name="HeatDefenseLabel" xml:space="preserve">
+    <value>Heat Defense:</value>
+  </data>
+  <data name="ColdDefenseLabel" xml:space="preserve">
+    <value>Cold Defense:</value>
+  </data>
+  <data name="LightningDefenseLabel" xml:space="preserve">
+    <value>Lightning Defense:</value>
+  </data>
+  <data name="LightDefenseLabel" xml:space="preserve">
+    <value>Light Defense:</value>
+  </data>
+  <data name="LpDefenseLabel" xml:space="preserve">
+    <value>LP Defense:</value>
+  </data>
+  <data name="EnemyColonLabel" xml:space="preserve">
+    <value>Enemy:</value>
+  </data>
+  <data name="AttackTypeLabel" xml:space="preserve">
+    <value>Attack Type:</value>
+  </data>
+  <data name="WeaponTypeLabel" xml:space="preserve">
+    <value>Weapon Type:</value>
+  </data>
+  <data name="EnCostLabel" xml:space="preserve">
+    <value>EN Cost:</value>
+  </data>
+  <data name="GrowthRateLabel" xml:space="preserve">
+    <value>Growth Rate:</value>
+  </data>
+  <data name="HpDamageLabel" xml:space="preserve">
+    <value>HP Damage:</value>
+  </data>
+  <data name="LpDamageLabel" xml:space="preserve">
+    <value>LP Damage:</value>
+  </data>
+  <data name="NumberOfHitsLabel" xml:space="preserve">
+    <value>Number of Hits:</value>
+  </data>
+  <data name="AttributesLabel" xml:space="preserve">
+    <value>Attributes:</value>
+  </data>
+  <data name="AttackLabel" xml:space="preserve">
+    <value>Attack</value>
+  </data>
+  <data name="AttackColonLabel" xml:space="preserve">
+    <value>Attack:</value>
+  </data>
+  <data name="HpDamageCalculation" xml:space="preserve">
+    <value>HP Damage Calculation</value>
+  </data>
+  <data name="LpDamageCalculation" xml:space="preserve">
+    <value>LP Damage Calculation</value>
+  </data>
+  <data name="RawDamageLabel" xml:space="preserve">
+    <value>Raw Damage:</value>
+  </data>
+  <data name="FinalDamageLabel" xml:space="preserve">
+    <value>Final Damage:</value>
+  </data>
+  <data name="CalculateLabel" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="ComboPercentageLabel" xml:space="preserve">
+    <value>Combo Percentage (1.00 = 100%):</value>
+  </data>
+  <data name="DamageProbabilityLabel" xml:space="preserve">
+    <value>Probability:</value>
+  </data>
+  <data name="ZeroDamageLabel" xml:space="preserve">
+    <value>0 LP Damage Probability:</value>
+  </data>
+  <data name="OneDamageLabel" xml:space="preserve">
+    <value>1 LP Damage Probability:</value>
+  </data>
+  <data name="TwoDamageLabel" xml:space="preserve">
+    <value>2 LP Damage Probability:</value>
+  </data>
+  <data name="ThreeDamageLabel" xml:space="preserve">
+    <value>3 LP Damage Probability:</value>
+  </data>
+  <data name="AttackDamageLabel" xml:space="preserve">
+    <value>Attack Damage (For LP Calc):</value>
+  </data>
+  <data name="Martial" xml:space="preserve">
+    <value>Martial</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+  <data name="Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="Punch" xml:space="preserve">
+    <value>Punch</value>
+  </data>
+  <data name="Kick" xml:space="preserve">
+    <value>Kick</value>
+  </data>
+  <data name="Throw" xml:space="preserve">
+    <value>Throw</value>
+  </data>
+  <data name="Dagger" xml:space="preserve">
+    <value>Dagger</value>
+  </data>
+  <data name="Sword" xml:space="preserve">
+    <value>Sword</value>
+  </data>
+  <data name="Axe" xml:space="preserve">
+    <value>Axe</value>
+  </data>
+  <data name="Staff" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="Spear" xml:space="preserve">
+    <value>Spear</value>
+  </data>
+  <data name="Bow" xml:space="preserve">
+    <value>Bow</value>
+  </data>
+  <data name="Gun" xml:space="preserve">
+    <value>Gun</value>
+  </data>
+  <data name="Hit" xml:space="preserve">
+    <value>Hit</value>
+  </data>
+  <data name="Slash" xml:space="preserve">
+    <value>Slash</value>
+  </data>
+  <data name="Pierce" xml:space="preserve">
+    <value>Pierce</value>
+  </data>
+  <data name="Lightning" xml:space="preserve">
+    <value>Lightning</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="AllLabel" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="DamageCalculatorLabel" xml:space="preserve">
+    <value>Damage Calculator</value>
+  </data>
+  <data name="CharacterStatCalculatorLabel" xml:space="preserve">
+    <value>Character Stat Calculator</value>
+  </data>
+  <data name="PanelBoardLabel" xml:space="preserve">
+    <value>Panel Board</value>
+  </data>
+  <data name="CharacterColonLabel" xml:space="preserve">
+    <value>Character:</value>
+  </data>
+  <data name="CharacterLabel" xml:space="preserve">
+    <value>Character</value>
+  </data>
+  <data name="MagicLabel" xml:space="preserve">
+    <value>Magic:</value>
+  </data>
+  <data name="EnduranceLabel" xml:space="preserve">
+    <value>Endurance:</value>
+  </data>
+  <data name="SpiritLabel" xml:space="preserve">
+    <value>Spirit:</value>
+  </data>
+  <data name="FireLabel" xml:space="preserve">
+    <value>Fire:</value>
+  </data>
+  <data name="EarthLabel" xml:space="preserve">
+    <value>Earth:</value>
+  </data>
+  <data name="MetalLabel" xml:space="preserve">
+    <value>Metal:</value>
+  </data>
+  <data name="WaterLabel" xml:space="preserve">
+    <value>Water:</value>
+  </data>
+  <data name="WoodLabel" xml:space="preserve">
+    <value>Wood:</value>
+  </data>
+  <data name="ResultsLabel" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="RawLabel" xml:space="preserve">
+    <value>Raw</value>
+  </data>
+  <data name="BonusLabel" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="FinalLabel" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="StartingPanelsLabel" xml:space="preserve">
+    <value>Starting Panels</value>
+  </data>
+  <data name="Shield" xml:space="preserve">
+    <value>Shield</value>
+  </data>
+  <data name="InitialEquipmentLabel" xml:space="preserve">
+    <value>Initial Equipment</value>
+  </data>
+  <data name="WeaponOneLabel" xml:space="preserve">
+    <value>Weapon One:</value>
+  </data>
+  <data name="WeaponTwoLabel" xml:space="preserve">
+    <value>Weapon Two:</value>
+  </data>
+  <data name="AccessoryOneLabel" xml:space="preserve">
+    <value>Accessory One:</value>
+  </data>
+  <data name="AccessoryTwoLabel" xml:space="preserve">
+    <value>Accessory Two:</value>
+  </data>
+  <data name="HeadLabel" xml:space="preserve">
+    <value>Head:</value>
+  </data>
+  <data name="ChestLabel" xml:space="preserve">
+    <value>Chest:</value>
+  </data>
+  <data name="LegLabel" xml:space="preserve">
+    <value>Legs:</value>
+  </data>
+  <data name="MaterialLabel" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="MultiplierLabel" xml:space="preserve">
+    <value>Multiplier</value>
+  </data>
+  <data name="CharacterWeightLabel" xml:space="preserve">
+    <value>Character Weight:</value>
+  </data>
+  <data name="WeightNoColonLabel" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="WeaponOneWeightLabel" xml:space="preserve">
+    <value>Weapon One Weight:</value>
+  </data>
+  <data name="WeaponTwoWeightLabel" xml:space="preserve">
+    <value>Weapon Two Weight:</value>
+  </data>
+  <data name="AccessoryOneWeightLabel" xml:space="preserve">
+    <value>Accessory One Weight:</value>
+  </data>
+  <data name="AccessoryTwoWeightLabel" xml:space="preserve">
+    <value>Accessory Two Weight:</value>
+  </data>
+  <data name="HeadWeightLabel" xml:space="preserve">
+    <value>Head Weight:</value>
+  </data>
+  <data name="ChestWeightLabel" xml:space="preserve">
+    <value>Chest Weight:</value>
+  </data>
+  <data name="LegWeightLabel" xml:space="preserve">
+    <value>Legs Weight:</value>
+  </data>
+  <data name="TotalWeightLabel" xml:space="preserve">
+    <value>Total Weight:</value>
+  </data>
+  <data name="WeightCalculatorLabel" xml:space="preserve">
+    <value>Weight Calculator</value>
+  </data>
+  <data name="ItemLabel" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="MaterialWithColonLabel" xml:space="preserve">
+    <value>Material:</value>
+  </data>
+  <data name="TypeWithColonLabel" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="NumberOfAbilitiesLabel" xml:space="preserve">
+    <value>Number of Abilities:</value>
+  </data>
+  <data name="DurabilityLabel" xml:space="preserve">
+    <value>Durability:</value>
+  </data>
+  <data name="ItemCostCalculatorLabel" xml:space="preserve">
+    <value>Item Cost Calculator</value>
+  </data>
+  <data name="BaseValueLabel" xml:space="preserve">
+    <value>Base Value:</value>
+  </data>
+  <data name="EquipmentModifierLabel" xml:space="preserve">
+    <value>Equipment Modifier:</value>
+  </data>
+  <data name="FinalCostLabel" xml:space="preserve">
+    <value>Final Cost:</value>
+  </data>
+  <data name="AbilityModifierLabel" xml:space="preserve">
+    <value>Ability Modifier:</value>
+  </data>
+  <data name="SellingPriceLabel" xml:space="preserve">
+    <value>Selling Price:</value>
+  </data>
+  <data name="MagicTypeLabel" xml:space="preserve">
+    <value>Magic Type:</value>
+  </data>
+  <data name="TransferLabel" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="SetDamageLabel" xml:space="preserve">
+    <value>Set Damage</value>
+  </data>
+  <data name="AddToComboLabel" xml:space="preserve">
+    <value>Add To Combo</value>
+  </data>
+  <data name="ComboDamageLabel" xml:space="preserve">
+    <value>Combo Damage:</value>
+  </data>
+  <data name="Magic" xml:space="preserve">
+    <value>Magic</value>
+  </data>
+  <data name="ScenarioBoss" xml:space="preserve">
+    <value>Scenario Boss</value>
+  </data>
+  <data name="Boss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+  <data name="Gauntlet" xml:space="preserve">
+    <value>Gauntlet</value>
+  </data>
+  <data name="Kotr" xml:space="preserve">
+    <value>KOTR</value>
+  </data>
+  <data name="Beast" xml:space="preserve">
+    <value>Beast</value>
+  </data>
+  <data name="Wildling" xml:space="preserve">
+    <value>Wildling</value>
+  </data>
+  <data name="Bird" xml:space="preserve">
+    <value>Bird</value>
+  </data>
+  <data name="Insect" xml:space="preserve">
+    <value>Insect</value>
+  </data>
+  <data name="Vegeplast" xml:space="preserve">
+    <value>Vegeplast</value>
+  </data>
+  <data name="Aquan" xml:space="preserve">
+    <value>Aquan</value>
+  </data>
+  <data name="Demon" xml:space="preserve">
+    <value>Demon</value>
+  </data>
+  <data name="Undead" xml:space="preserve">
+    <value>Undead</value>
+  </data>
+  <data name="Slime" xml:space="preserve">
+    <value>Slime</value>
+  </data>
+  <data name="Dragon" xml:space="preserve">
+    <value>Dragon</value>
+  </data>
+  <data name="Unique" xml:space="preserve">
+    <value>Unique</value>
+  </data>
+  <data name="Defense" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="Familiar" xml:space="preserve">
+    <value>Familiar</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="Mastery" xml:space="preserve">
+    <value>Mastery</value>
+  </data>
+  <data name="Investigation" xml:space="preserve">
+    <value>Investigation</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="Negotiation" xml:space="preserve">
+    <value>Negotiation</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Mystery" xml:space="preserve">
+    <value>Mystery</value>
+  </data>
+  <data name="Phobia" xml:space="preserve">
+    <value>Phobia</value>
+  </data>
+  <data name="Pacifist" xml:space="preserve">
+    <value>Pacifist</value>
+  </data>
+  <data name="Seal" xml:space="preserve">
+    <value>Seal</value>
+  </data>
+  <data name="Fire" xml:space="preserve">
+    <value>Fire</value>
+  </data>
+  <data name="Water" xml:space="preserve">
+    <value>Water</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Earth</value>
+  </data>
+  <data name="Metal" xml:space="preserve">
+    <value>Metal</value>
+  </data>
+  <data name="Wood" xml:space="preserve">
+    <value>Wood</value>
+  </data>
+  <data name="WeaponMaterialLabel" xml:space="preserve">
+    <value>Weapon Material:</value>
+  </data>
+</root>

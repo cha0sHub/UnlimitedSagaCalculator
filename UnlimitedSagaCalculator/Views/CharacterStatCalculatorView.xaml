@@ -1,0 +1,357 @@
+﻿<Grid x:Class="UnlimitedSagaCalculator.Views.CharacterStatCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UnlimitedSagaCalculator.Views"
+             xmlns:properties="clr-namespace:UnlimitedSagaCalculator.Properties"
+             xmlns:controllers="clr-namespace:UnlimitedSagaCalculator.Controllers"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance controllers:CharacterStatCalculatorController}"
+             d:DesignHeight="550" d:DesignWidth="1000"
+             Background="LightGray">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="GroupBox">
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="1" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="MinWidth" Value="100" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="MinWidth" Value="50" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label x:Name="PanelBoardLabel" FontWeight="DemiBold" Content="{x:Static properties:Resources.PanelBoardLabel}"  />
+        <Border Height="400" Grid.Row="1" Grid.Column="0" Background="WhiteSmoke" Margin="5,0,5,5" BorderBrush="DarkGray" BorderThickness="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.RowSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="150" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="77" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="77" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding ElementOneString}" FontWeight="DemiBold" FontSize="14" />
+                        <Label Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding ElementTwoString}" FontWeight="DemiBold" FontSize="14" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="77" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="77" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding ElementThreeString}" FontWeight="DemiBold" FontSize="14" />
+                        <Label Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="{Binding ElementFourString}" FontWeight="DemiBold" FontSize="14" />
+                        <Label Grid.Column="1" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Content="{Binding ElementFiveString}" FontWeight="DemiBold" FontSize="14"  />
+                    </Grid>
+                </Grid>
+                <Image Grid.RowSpan="3" MinHeight="300" MinWidth="300" Source="/UnlimitedSagaCalculator;component/Images/HexGrid.png"  />
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="1" Grid.Row="1" x:Name="NwPanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding NwSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="NwPanelBox" ItemsSource="{Binding NWPanels}" SelectedItem="{Binding NwSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="NwPanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding NwSelectedLevel}" Width="50" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="0" Grid.Row="1" x:Name="NePanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding NeSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="0" Grid.Row="2" x:Name="NePanelBox" ItemsSource="{Binding NEPanels}" SelectedItem="{Binding NeSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="0" Grid.Row="3" x:Name="NePanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding NeSelectedLevel}" Width="50" />
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="1" Grid.Row="1" x:Name="WPanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding WSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="WPanelBox" ItemsSource="{Binding WPanels}" SelectedItem="{Binding WSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="WPanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding WSelectedLevel}" Width="50" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="1" Grid.Row="1" x:Name="CPanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding CSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="CPanelBox" ItemsSource="{Binding CPanels}" SelectedItem="{Binding CSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="CPanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding CSelectedLevel}" Width="50" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="1" Grid.Row="1" x:Name="EPanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding ESelectedType}" Width="75" Margin="-5,3,3,3" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="EPanelBox" ItemsSource="{Binding EPanels}" SelectedItem="{Binding ESelectedPanel}" Width="100" Margin="-5,3,3,3" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="EPanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding ESelectedLevel}" Width="50" Margin="-5,3,3,3" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="1" Grid.Row="1" x:Name="SwPanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding SwSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="1" Grid.Row="2" x:Name="SwPanelBox" ItemsSource="{Binding SWPanels}" SelectedItem="{Binding SwSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="1" Grid.Row="3" x:Name="SwPanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding SwSelectedLevel}" Width="50" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ComboBox Grid.Column="0" Grid.Row="1" x:Name="SePanelTypeBox" ItemsSource="{Binding PanelTypes}" SelectedValue="{Binding SeSelectedType}" Width="75" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                        <ComboBox Grid.Column="0" Grid.Row="2" x:Name="SePanelBox" ItemsSource="{Binding SEPanels}" SelectedItem="{Binding SeSelectedPanel}" Width="100" />
+                        <ComboBox Grid.Column="0" Grid.Row="3" x:Name="SePanelLevelBox" ItemsSource="{Binding PanelLevels}" SelectedItem="{Binding SeSelectedLevel}" Width="50" />
+                    </Grid>
+                </Grid>
+                
+            </Grid>
+        </Border>
+        <Grid Grid.Column="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="CharacterColonLabel" Grid.Column="0" Margin="3,5,3,3" Content="{x:Static properties:Resources.CharacterColonLabel}" />
+                <ComboBox x:Name="CharacterBox" Grid.Column="1" Margin="3,5,3,3" SelectedItem="{Binding SelectedCharacter}" ItemsSource="{Binding Characters}" />
+            </Grid>
+            <GroupBox Grid.Row="1">
+                <GroupBox.Header>
+                    <Label x:Name="CharacterLabel" Content="{x:Static properties:Resources.CharacterLabel}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="CharacterLpLabel" Grid.Row="0" Grid.Column="0" Content="LP:" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CharacterLp}" IsReadOnly="true" />
+                    <Label x:Name="CharacterStrengthLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.StrengthLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CharacterStrength}" IsReadOnly="true" />
+                    <Label x:Name="CharacterSkillLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.SkillLabel}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CharacterSkill}" IsReadOnly="true" />
+                    <Label x:Name="CharacterSpiritLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.SpiritLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CharacterSpirit}" IsReadOnly="true" />
+                    <Label x:Name="CharacterMagicLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.MagicLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CharacterMagic}" IsReadOnly="true" />
+                    <Label x:Name="CharacterEnduranceLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.EnduranceLabel}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CharacterEndurance}" IsReadOnly="true" />
+                    <Label x:Name="CharacterFireLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.FireLabel}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CharacterFire}" IsReadOnly="true" />
+                    <Label x:Name="CharacterEarthLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.EarthLabel}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding CharacterEarth}" IsReadOnly="true" />
+                    <Label x:Name="CharacterMetalLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.MetalLabel}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding CharacterMetal}" IsReadOnly="true" />
+                    <Label x:Name="CharacterWaterLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.WaterLabel}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding CharacterWater}" IsReadOnly="true" />
+                    <Label x:Name="CharacterWoodLabel" Grid.Row="10" Grid.Column="0" Content="{x:Static properties:Resources.WoodLabel}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding CharacterWood}" IsReadOnly="true" />
+                    <Label x:Name="CharacterWeightLabel" Grid.Row="11" Grid.Column="0" Content="{x:Static properties:Resources.WeightLabel}" />
+                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding CharacterWeight}" IsReadOnly="true" />
+                    <Label x:Name="CharacterHpLabel" Grid.Row="12" Grid.Column="0" Content="HP:" />
+                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding CharacterHp}" IsReadOnly="true" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Button x:Name="StartingPanelsButton" Grid.Column="2" Grid.Row="0" Margin="3,5,3,3" Padding="4" Content="{x:Static properties:Resources.StartingPanelsLabel}" Click="StartingPanelsButton_Click" />
+        <Grid Grid.Column="2" Grid.Row="1" >
+            <GroupBox Grid.Row="1">
+                <GroupBox.Header>
+                    <Label x:Name="ResultsLabel" Content="{x:Static properties:Resources.ResultsLabel}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="RawLabel" Grid.Row="0" Grid.Column="1" Content="{x:Static properties:Resources.RawLabel}" HorizontalContentAlignment="Center" />
+                    <Label x:Name="BonusLabel" Grid.Row="0" Grid.Column="2" Content="{x:Static properties:Resources.BonusLabel}" HorizontalContentAlignment="Center" />
+                    <Label x:Name="FinalLabel" Grid.Row="0" Grid.Column="3" Content="{x:Static properties:Resources.FinalLabel}" HorizontalContentAlignment="Center" />
+                    <Label x:Name="ResultStrengthLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.StrengthLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RawStrength}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding BonusStrength}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding FinalStrength}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultSkillLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.SkillLabel}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RawSkill}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding BonusSkill}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding FinalSkill}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultSpiritLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.SpiritLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RawSpirit}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding BonusSpirit}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding FinalSpirit}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultMagicLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.MagicLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding RawMagic}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding BonusMagic}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding FinalMagic}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultEnduranceLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.EnduranceLabel}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RawEndurance}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding BonusEndurance}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding FinalEndurance}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    
+                    <Label x:Name="ResultFireLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.FireLabel}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RawFire}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding BonusFire}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="6" Grid.Column="3" Text="{Binding FinalFire}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultEarthLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.EarthLabel}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding RawEarth}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding BonusEarth}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="7" Grid.Column="3" Text="{Binding FinalEarth}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultMetalLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.MetalLabel}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding RawMetal}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding BonusMetal}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="8" Grid.Column="3" Text="{Binding FinalMetal}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultWaterLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.WaterLabel}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RawWater}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding BonusWater}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="9" Grid.Column="3" Text="{Binding FinalWater}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Label x:Name="ResultWoodLabel" Grid.Row="10" Grid.Column="0" Content="{x:Static properties:Resources.WoodLabel}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding RawWood}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding BonusWood}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <TextBox Grid.Row="10" Grid.Column="3" Text="{Binding FinalWood}" MinWidth="10" Width="40" IsReadOnly="True" />
+                    <Button x:Name="CalculateButton" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="4" Margin="3" Padding="4" Content="{x:Static properties:Resources.CalculateLabel}" Click="CalculateButton_Click" />
+                    <Button x:Name="TransferButton" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="4" Margin="3" Padding="4" Content="{x:Static properties:Resources.TransferLabel}" Click="TransferButton_Click" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Grid>

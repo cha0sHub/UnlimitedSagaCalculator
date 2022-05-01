@@ -1,0 +1,48 @@
+﻿<Window x:Class="UnlimitedSagaCalculator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UnlimitedSagaCalculator.Views"
+        xmlns:properties="clr-namespace:UnlimitedSagaCalculator.Properties"
+        xmlns:controllers="clr-namespace:UnlimitedSagaCalculator.Controllers"
+        mc:Ignorable="d"
+        Title="Unlimited Saga Calculator" Height="600" Width="1100" Background="LightGray">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="MinHeight" Value="25" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                    <Setter Property="Background" Value="WhiteSmoke" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Language/言語">
+                    <MenuItem x:Name="EnglishLanguageItem" Header="English" Click="EnglishLanguageItem_Click"/>
+                    <MenuItem x:Name="JapaneseLanguageItem" Header="日本語" Click="JapaneseLanguageItem_Click" />
+                </MenuItem>
+            </Menu>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="DamageCalculatorButton" Grid.Column="0" Content="{x:Static properties:Resources.DamageCalculatorLabel}" Click="DamageCalculatorButton_Click" />
+                <Button x:Name="CharacterStatCalculatorButton" Grid.Column="1" Content="{x:Static properties:Resources.CharacterStatCalculatorLabel}" Click="CharacterStatCalculatorButton_Click" />
+                <Button x:Name="WeightCalculatorButton" Grid.Column="2" Content="{x:Static properties:Resources.WeightCalculatorLabel}" Click="WeightCalculatorButton_Click" />
+                <Button x:Name="ItemCostCalculatorButton" Grid.Column="3" Content="{x:Static properties:Resources.ItemCostCalculatorLabel}" Click="ItemCostCalculatorButton_Click" />
+            </Grid>
+        </DockPanel>
+        <ContentControl Grid.Row="1" x:Name="ContentPlaceholder"/>
+    </Grid>
+</Window>

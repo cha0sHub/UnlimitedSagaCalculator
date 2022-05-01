@@ -1,0 +1,296 @@
+﻿<Grid x:Class="UnlimitedSagaCalculator.Views.DamageCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UnlimitedSagaCalculator.Views"
+             xmlns:properties="clr-namespace:UnlimitedSagaCalculator.Properties"
+             xmlns:controllers="clr-namespace:UnlimitedSagaCalculator.Controllers"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance controllers:DamageCalculatorController}"
+             d:DesignHeight="450" d:DesignWidth="1100" Background="LightGray">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="GroupBox">
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="1" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="MinWidth" Value="100" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="MinWidth" Value="100" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="MinHeight" Value="25" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" /> 
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" x:Name="AttackerDataGrid">
+            <GroupBox>
+                <GroupBox.Header>
+                    <Label x:Name="AttackerLabel" Content="{x:Static properties:Resources.AttackerLabel}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="AttackerCurrentHpLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.CurrentHpLabel}" FontWeight="Bold" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding AttackerCurrentHp}" />
+                    <Label x:Name="AttackerMaxHpLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.MaxHpLabel}" FontWeight="Bold" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding AttackerMaxHp}" />
+                    <Label x:Name="AttackerStrengthLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.StrengthLabel}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding AttackerStrength}" />
+                    <Label x:Name="AttackerSkillLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.SkillLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding AttackerSkill}" />
+                    <Label x:Name="AttackerMagicLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.MagicLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding AttackerMagic}" />
+                    <Label x:Name="AttackerWeightLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.WeightLabel}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding AttackerWeight}" />
+                    <Label x:Name="AttackerWeaponMaterialLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.WeaponMaterialLabel}" />
+                    <ComboBox x:Name="AttackerWeaponMaterialBox" Grid.Row="6" Grid.Column="1" SelectedItem="{Binding SelectedWeaponMaterial}" ItemsSource="{Binding WeaponMaterials}" />
+                    <Label x:Name="AttackerWeaponPowerLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.WeaponPowerLabel}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding AttackerWeaponPower}" />
+                    <Label x:Name="AttackerFireLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.FireLabel}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding AttackerFire}" />
+                    <Label x:Name="AttackerWaterLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.WaterLabel}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding AttackerWater}" />
+                    <Label x:Name="AttackerWoodLabel" Grid.Row="10" Grid.Column="0" Content="{x:Static properties:Resources.WoodLabel}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding AttackerWood}" />
+                    <Label x:Name="AttackerEarthLabel" Grid.Row="11" Grid.Column="0" Content="{x:Static properties:Resources.EarthLabel}" />
+                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding AttackerEarth}" />
+                    <Label x:Name="AttackerMetalLabel" Grid.Row="12" Grid.Column="0" Content="{x:Static properties:Resources.MetalLabel}" />
+                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding AttackerMetal}" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="1" x:Name="EnemyDataGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="EnemyColonLabel" Grid.Column="0" Content="{x:Static properties:Resources.EnemyColonLabel}" />
+                <ComboBox x:Name="EnemyCategoryBox" Grid.Column="1" SelectedValue="{Binding SelectedEnemyCategoryFilter}" ItemsSource="{Binding EnemyCategories}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                <ComboBox x:Name="EnemyBox" Grid.Column="2" SelectedItem="{Binding SelectedEnemy}" ItemsSource="{Binding Enemies}" />
+            </Grid>
+            <GroupBox Grid.Row="1">
+                <GroupBox.Header>
+                    <Label x:Name="EnemyLabel" Content="{x:Static properties:Resources.EnemyLabel}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="EnemyCurrentHpLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.CurrentHpLabel}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding EnemyCurrentHp}" />
+                    <Label x:Name="EnemyMaxHpLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.MaxHpLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding EnemyMaxHp}" />
+                    <Label x:Name="EnemyLpLabel" Grid.Row="2" Grid.Column="0" Content="LP:" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding EnemyLp}" />
+                    <Label x:Name="SlashDefenseLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.SlashDefenseLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding EnemySlashDefense}" />
+                    <Label x:Name="HitDefenseLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.HitDefenseLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding EnemyHitDefense}" />
+                    <Label x:Name="PierceDefenseLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.PierceDefenseLabel}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding EnemyPierceDefense}" />
+                    <Label x:Name="HeatDefenseLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.HeatDefenseLabel}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding EnemyHeatDefense}" />
+                    <Label x:Name="ColdDefenseLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.ColdDefenseLabel}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding EnemyColdDefense}" />
+                    <Label x:Name="LightningDefenseLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.LightningDefenseLabel}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding EnemyLightningDefense}" />
+                    <Label x:Name="LightDefenseLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.LightDefenseLabel}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding EnemyLightDefense}" />
+                    <Label x:Name="LpDefenseLabel" Grid.Row="10" Grid.Column="0" Content="{x:Static properties:Resources.LpDefenseLabel}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding EnemyLpDefense}" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="2" x:Name="AttackDataGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="AttackColonLabel" Grid.Column="0" Content="{x:Static properties:Resources.AttackColonLabel}" />
+                <ComboBox x:Name="WeaponTypeBox" Grid.Column="1" SelectedValue="{Binding SelectedWeaponTypeFilter}" ItemsSource="{Binding WeaponTypes}" SelectedValuePath="Key" DisplayMemberPath="Value" />
+                <ComboBox x:Name="AttackBox" Grid.Column="2" SelectedItem="{Binding SelectedAttack}" ItemsSource="{Binding Attacks}" />
+            </Grid>
+            <GroupBox Grid.Row="1">
+                <GroupBox.Header>
+                    <Label x:Name="AttackLabel" Content="{x:Static properties:Resources.AttackLabel}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="AttackTypeLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.AttackTypeLabel}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding AttackTypeString}" IsReadOnly="True"  />
+                    <Label x:Name="WeaponTypeLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.WeaponTypeLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WeaponTypeString}" IsReadOnly="True" />
+                    <Label x:Name="MagicTypeLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.MagicTypeLabel}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MagicTypeString}" IsReadOnly="True" />
+                    <Label x:Name="EnCostLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.EnCostLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding EnCost}" />
+                    <Label x:Name="GrowthRateLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.GrowthRateLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GrowthRate}" IsReadOnly="true" />
+                    <Label x:Name="HpDamageLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.HpDamageLabel}" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding HpDamage}" IsReadOnly="true" />
+                    <Label x:Name="LpDamageLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.LpDamageLabel}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding LpDamage}" IsReadOnly="true" />
+                    <Label x:Name="NumberOfHitsLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.NumberOfHitsLabel}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding NumberOfHits}" IsReadOnly="true" />
+                    <Label x:Name="AttributesLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.AttributesLabel}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding AttackAttributesString}" IsReadOnly="True" />
+                    <Label x:Name="ComboPercentageLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.ComboPercentageLabel}" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding ComboPercentage}" />
+                    <Label x:Name="AttackDamageLabel" Grid.Row="10" Grid.Column="0" Content="{x:Static properties:Resources.AttackDamageLabel}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding AttackDamage}" />
+                    <Label x:Name="ComboDamageLabel" Grid.Row="11" Grid.Column="0" Content="{x:Static properties:Resources.ComboDamageLabel}" />
+                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding ComboDamage}" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="4" x:Name="ResultsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0">
+                <GroupBox.Header>
+                    <Label x:Name="HpDamageCalculationLabel" Content="{x:Static properties:Resources.HpDamageCalculation}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="RawDamageLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.RawDamageLabel}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RawDamageString}" IsReadOnly="True"  />
+                    <Label x:Name="FinalDamageLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.FinalDamageLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FinalDamageString}" IsReadOnly="True"  />
+                    <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="CalculateHpDamageButton" Content="{x:Static properties:Resources.CalculateLabel}" Click="CalculateHpDamageButton_Click" />
+                    <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" x:Name="SetHpDamageButton" Content="{x:Static properties:Resources.SetDamageLabel}" Click="SetHpDamageButton_Click" />
+                        <Button Grid.Column="1" x:Name="AddToComboButton" Content="{x:Static properties:Resources.AddToComboLabel}" Click="AddToComboButton_Click" />
+                    </Grid>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1">
+                <GroupBox.Header>
+                    <Label x:Name="LpDamageCalculationLabel" Content="{x:Static properties:Resources.LpDamageCalculation}" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="DamageProbabilityLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.DamageProbabilityLabel}" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DamageProbability}" IsReadOnly="True"  />
+                    <Label x:Name="ZeroDamageLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.ZeroDamageLabel}" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding OddsOfNoDamage}" IsReadOnly="True"  />
+                    <Label x:Name="OneDamageLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.OneDamageLabel}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding OddsOfOneDamage}" IsReadOnly="True"  />
+                    <Label x:Name="TwoDamageLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.TwoDamageLabel}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding OddsOfTwoDamage}" IsReadOnly="True"  />
+                    <Label x:Name="ThreeDamageLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.ThreeDamageLabel}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding OddsOfThreeDamage}" IsReadOnly="True"  />
+                    
+                    <Button Grid.Row="5" Grid.ColumnSpan="2" x:Name="CalculateLpDamageButton" Content="{x:Static properties:Resources.CalculateLabel}" Click="CalculateLpDamageButton_Click" />
+                    
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Grid>

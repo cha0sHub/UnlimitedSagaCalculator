@@ -1,0 +1,152 @@
+﻿<Grid x:Class="UnlimitedSagaCalculator.Views.WeightCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UnlimitedSagaCalculator.Views"
+             xmlns:properties="clr-namespace:UnlimitedSagaCalculator.Properties"
+             xmlns:controllers="clr-namespace:UnlimitedSagaCalculator.Controllers"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance controllers:WeightCalculatorController}"
+             d:DesignHeight="450" d:DesignWidth="1000"
+             Background="LightGray">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="GroupBox">
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="1" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="MinWidth" Value="50" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="MinWidth" Value="100" />
+                    <Setter Property="Margin" Value="3" />
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <GroupBox>
+            <GroupBox.Header>
+                <Label x:Name="CharacterLabel" Content="{x:Static properties:Resources.CharacterLabel}" />
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="CharacterColonLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.CharacterColonLabel}" />
+                <ComboBox x:Name="CharacterBox" Grid.Row="0" Grid.Column="1" SelectedItem="{Binding SelectedCharacter}" ItemsSource="{Binding Characters}" />
+                <Button x:Name="DefaultEquipmentButton" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Margin="3" Padding="3" Content="{x:Static properties:Resources.InitialEquipmentLabel}" Click="DefaultEquipmentButton_Click" />
+                <Label x:Name="CharacterWeightLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.CharacterWeightLabel}" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CharacterWeight}" IsReadOnly="true" />
+                <Label x:Name="MaterialLabel" Grid.Row="2" Grid.Column="1" FontWeight="DemiBold" HorizontalContentAlignment="Center" Content="{x:Static properties:Resources.MaterialLabel}" />
+                <Label x:Name="WeightLabel" Grid.Row="2" Grid.Column="2" FontWeight="DemiBold" HorizontalContentAlignment="Center" Content="{x:Static properties:Resources.WeightNoColonLabel}" />
+                <Label x:Name="TypeLabel" Grid.Row="2" Grid.Column="3" FontWeight="DemiBold" HorizontalContentAlignment="Center" Content="{x:Static properties:Resources.TypeLabel}" />
+                <Label x:Name="MultiplierLabel" Grid.Row="2" Grid.Column="4" FontWeight="DemiBold" HorizontalContentAlignment="Center" Content="{x:Static properties:Resources.MultiplierLabel}" />
+                <Label x:Name="WeaponOneLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.WeaponOneLabel}" />
+                <ComboBox x:Name="WeaponOneMaterialBox" Grid.Row="3" Grid.Column="1" SelectedItem="{Binding SelectedWeaponOneMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding WeaponOneMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="WeaponOneTypeBox" Grid.Row="3" Grid.Column="3" SelectedItem="{Binding SelectedWeaponOneType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding WeaponOneTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="WeaponTwoLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.WeaponTwoLabel}" />
+                <ComboBox x:Name="WeaponTwoMaterialBox" Grid.Row="4" Grid.Column="1" SelectedItem="{Binding SelectedWeaponTwoMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding WeaponTwoMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="WeaponTwoTypeBox" Grid.Row="4" Grid.Column="3" SelectedItem="{Binding SelectedWeaponTwoType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="4" Grid.Column="4" Text="{Binding WeaponTwoTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="AccessoryOneLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.AccessoryOneLabel}" />
+                <ComboBox x:Name="AccessoryOneMaterialBox" Grid.Row="5" Grid.Column="1" SelectedItem="{Binding SelectedAccessoryOneMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding AccessoryOneMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="AccessoryOneTypeBox" Grid.Row="5" Grid.Column="3" SelectedItem="{Binding SelectedAccessoryOneType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="5" Grid.Column="4" Text="{Binding AccessoryOneTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="AccessoryTwoLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.AccessoryTwoLabel}" />
+                <ComboBox x:Name="AccessoryTwoMaterialBox" Grid.Row="6" Grid.Column="1" SelectedItem="{Binding SelectedAccessoryTwoMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding AccessoryTwoMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="AccessoryTwoTypeBox" Grid.Row="6" Grid.Column="3" SelectedItem="{Binding SelectedAccessoryTwoType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="6" Grid.Column="4" Text="{Binding AccessoryTwoTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="HeadLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.HeadLabel}" />
+                <ComboBox x:Name="HeadMaterialBox" Grid.Row="7" Grid.Column="1" SelectedItem="{Binding SelectedHeadMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding HeadMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="HeadTypeBox" Grid.Row="7" Grid.Column="3" SelectedItem="{Binding SelectedHeadType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="7" Grid.Column="4" Text="{Binding HeadTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="ChestLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.ChestLabel}" />
+                <ComboBox x:Name="ChestMaterialBox" Grid.Row="8" Grid.Column="1" SelectedItem="{Binding SelectedChestMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding ChestMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="ChestTypeBox" Grid.Row="8" Grid.Column="3" SelectedItem="{Binding SelectedChestType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="8" Grid.Column="4" Text="{Binding ChestTypeMultiplier}" IsReadOnly="true" />
+                <Label x:Name="LegLabel" Grid.Row="9" Grid.Column="0" Content="{x:Static properties:Resources.LegLabel}" />
+                <ComboBox x:Name="LegMaterialBox" Grid.Row="9" Grid.Column="1" SelectedItem="{Binding SelectedLegMaterial}" ItemsSource="{Binding Materials}" />
+                <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding LegMaterialWeight}" IsReadOnly="true" />
+                <ComboBox x:Name="LegTypeBox" Grid.Row="9" Grid.Column="3" SelectedItem="{Binding SelectedLegType}" ItemsSource="{Binding EquipmentTypes}" />
+                <TextBox Grid.Row="9" Grid.Column="4" Text="{Binding LegTypeMultiplier}" IsReadOnly="true" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="1">
+            <GroupBox.Header>
+                <Label x:Name="ResultsLabel" Content="{x:Static properties:Resources.ResultsLabel}" />
+            </GroupBox.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label x:Name="FinalCharacterWeightLabel" Grid.Row="0" Grid.Column="0" Content="{x:Static properties:Resources.CharacterWeightLabel}" />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FinalCharacterWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalWeaponOneWeightLabel" Grid.Row="1" Grid.Column="0" Content="{x:Static properties:Resources.WeaponOneWeightLabel}" />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FinalWeaponOneWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalWeaponTwoWeightLabel" Grid.Row="2" Grid.Column="0" Content="{x:Static properties:Resources.WeaponTwoWeightLabel}" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FinalWeaponTwoWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalAccessoryOneWeightLabel" Grid.Row="3" Grid.Column="0" Content="{x:Static properties:Resources.AccessoryOneWeightLabel}" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding FinalAccessoryTwoWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalAccessoryTwoWeightLabel" Grid.Row="4" Grid.Column="0" Content="{x:Static properties:Resources.AccessoryTwoWeightLabel}" />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding FinalAccessoryTwoWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalHeadWeightLabel" Grid.Row="5" Grid.Column="0" Content="{x:Static properties:Resources.HeadWeightLabel}" />
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding FinalHeadWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalChestWeightLabel" Grid.Row="6" Grid.Column="0" Content="{x:Static properties:Resources.ChestWeightLabel}" />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding FinalChestWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalLegWeightLabel" Grid.Row="7" Grid.Column="0" Content="{x:Static properties:Resources.LegWeightLabel}" />
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding FinalLegWeight}" IsReadOnly="true" />
+                <Label x:Name="FinalTotalWeightLabel" Grid.Row="8" Grid.Column="0" Content="{x:Static properties:Resources.TotalWeightLabel}" />
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding FinalTotalWeight}" IsReadOnly="true" />
+                <Button x:Name="CalculateButton" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" Padding="3" Content="{x:Static properties:Resources.CalculateLabel}" Click="CalculateButton_Click" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Grid>
