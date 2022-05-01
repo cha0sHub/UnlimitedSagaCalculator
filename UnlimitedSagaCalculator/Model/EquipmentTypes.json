@@ -1,6 +1,11 @@
 ﻿{
   "EquipmentTypes": [
     {
+      "EnglishName": "",
+      "JapaneseName": "",
+      "WeightMultiplier": 0
+    },
+    {
       "EnglishName": "Dagger",
       "JapaneseName": "短剣",
       "WeightMultiplier": 2

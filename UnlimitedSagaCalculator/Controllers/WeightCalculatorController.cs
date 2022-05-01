@@ -600,40 +600,78 @@ namespace UnlimitedSagaCalculator.Controllers
                 SelectedWeaponOneMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.WeaponOneMaterial);
                 SelectedWeaponOneType = EquipmentTypes.First(e => e.EnglishName == SelectedCharacter.WeaponOneType);
             }
+            else
+            {
+                SelectedWeaponOneMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedWeaponOneType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
+            }
             if (!string.IsNullOrEmpty(SelectedCharacter.WeaponTwoMaterial))
             {
                 SelectedWeaponTwoMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.WeaponTwoMaterial);
                 SelectedWeaponTwoType = EquipmentTypes.First(e => e.EnglishName == SelectedCharacter.WeaponTwoType);
+            }
+            else
+            {
+                SelectedWeaponTwoMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedWeaponTwoType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
             }
             if (!string.IsNullOrEmpty(SelectedCharacter.AccessoryOneMaterial))
             {
                 SelectedAccessoryOneMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.AccessoryOneMaterial);
                 SelectedAccessoryOneType = EquipmentTypes.First(e => e.EnglishName == "Accessory");
             }
+            else
+            {
+                SelectedAccessoryOneMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedAccessoryOneType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
+            }
             if (!string.IsNullOrEmpty(SelectedCharacter.AccessoryTwoMaterial))
             {
                 SelectedAccessoryTwoMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.AccessoryTwoMaterial);
                 SelectedAccessoryTwoType = EquipmentTypes.First(e => e.EnglishName == "Accessory");
+            }
+            else
+            {
+                SelectedAccessoryTwoMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedAccessoryTwoType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
             }
             if (!string.IsNullOrEmpty(SelectedCharacter.HeadMaterial))
             {
                 SelectedHeadMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.HeadMaterial);
                 SelectedHeadType = EquipmentTypes.First(e => e.EnglishName == "Head");
             }
+            else
+            {
+                SelectedHeadMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedHeadType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
+            }
             if (!string.IsNullOrEmpty(SelectedCharacter.ChestMaterial))
             {
                 SelectedChestMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.ChestMaterial);
                 SelectedChestType = EquipmentTypes.First(e => e.EnglishName == "Chest");
+            }
+            else
+            {
+                SelectedChestMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedChestType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
             }
             if (!string.IsNullOrEmpty(SelectedCharacter.LegsMaterial))
             {
                 SelectedLegMaterial = Materials.First(m => m.EnglishName == SelectedCharacter.LegsMaterial);
                 SelectedLegType = EquipmentTypes.First(e => e.EnglishName == "Leg");
             }
+            else
+            {
+                SelectedLegMaterial = Materials.First(m => m.EnglishName == string.Empty);
+                SelectedLegType = EquipmentTypes.First(e => e.EnglishName == string.Empty);
+            }
         }
 
         public void CalculateWeight()
         {
+            if (SelectedCharacter == null)
+                return;
+
             var characterData = new CharacterData();
 
             characterData.Weight = SelectedCharacter.Weight;

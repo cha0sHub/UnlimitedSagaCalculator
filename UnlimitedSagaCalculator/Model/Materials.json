@@ -1,6 +1,18 @@
 ﻿{
   "Materials": [
     {
+      "EnglishName": "",
+      "JapaneseName": "",
+      "Weight": 0,
+      "BaseValue": 0,
+      "DaggerDamage": 0,
+      "SwordDamage": 0,
+      "AxeDamage": 0,
+      "StaffDamage": 0,
+      "SpearDamage": 0,
+      "BowDamage": 0
+    },
+    {
       "EnglishName": "Feather",
       "JapaneseName": "フェザー",
       "Weight": 0,
@@ -576,7 +588,7 @@
       "AxeDamage": 79,
       "StaffDamage": 60,
       "SpearDamage": 83,
-      "BowDamage": 77 
+      "BowDamage": 77
     },
     {
       "EnglishName": "Roadster",

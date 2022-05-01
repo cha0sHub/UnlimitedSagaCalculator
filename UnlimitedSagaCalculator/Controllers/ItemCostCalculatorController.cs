@@ -159,7 +159,7 @@ namespace UnlimitedSagaCalculator.Controllers
 
         public void Calculate()
         {
-            if (SelectedMaterial == null || SelectedEquipmentType == null)
+            if (SelectedMaterial == null || SelectedEquipmentType == null || string.IsNullOrEmpty(SelectedMaterial.EnglishName) || string.IsNullOrEmpty(SelectedEquipmentType.EnglishName))
                 return;
             var itemData = new ItemData
             {
