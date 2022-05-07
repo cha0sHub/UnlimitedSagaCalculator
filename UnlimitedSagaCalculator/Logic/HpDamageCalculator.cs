@@ -119,12 +119,12 @@ namespace UnlimitedSagaCalculator.Logic
 
         private double CalculateRand1UpperBound(double currentHp, double maxHp)
         {
-            return (12 * (maxHp - currentHp) / maxHp);
+            return 12 * (maxHp - currentHp) / maxHp;
         }
 
         private double CalculateRand2UpperBound(double currentHp, double maxHp)
         {
-            return (12 + 12 * (maxHp - currentHp) / maxHp);
+            return 12 + 12 * (maxHp - currentHp) / maxHp;
         }
 
         private double CalculateElementBaseDamage(AttackerData attackerData, MagicType type)
@@ -143,7 +143,7 @@ namespace UnlimitedSagaCalculator.Logic
 
         private double CalculateStatBaseDamage(double statValue)
         {
-            return (100 * Math.Pow(statValue, 2)) / (Math.Pow(statValue, 2) + 800) + 4;
+            return 100 * Math.Pow(statValue, 2) / (Math.Pow(statValue, 2) + 800) + 4;
         }
     }
 }

@@ -15,9 +15,6 @@ namespace UnlimitedSagaCalculator.Logic
         {
             var damageProbability = Math.Max(0,((attackData.LpDamage * 8 + 20) * (enemyData.Hp - enemyData.CurrentHp + 1) / enemyData.Hp * comboPercentage - enemyData.LpDefense * 5) / 70);
 
-            if (attackHpDamage > enemyData.CurrentHp)
-                damageProbability += .20;
-
             var numberOfTries = (int)attackData.NumberOfHits;
             if (attackHpDamage > 499)
                 numberOfTries++;

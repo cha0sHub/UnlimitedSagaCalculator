@@ -12,7 +12,6 @@ namespace UnlimitedSagaCalculator.Controllers
 {
     internal class CharacterStatCalculatorController : ICharacterStatCalculatorController, INotifyPropertyChanged
     {
-
         private ICharacterStatCalculatorView View { get; }
         private IUsagaModel UsagaModel { get; }
         private ICharacterStatCalculator CharacterStatCalculator { get; }
@@ -108,10 +107,11 @@ namespace UnlimitedSagaCalculator.Controllers
         private int _rawWood;
         private int _bonusWood;
         private int _finalWood;
-        
+
         public CharacterData SelectedCharacter
         {
-            get {
+            get 
+            {
                 return _selectedCharacter;
             }
             set
